@@ -1,40 +1,32 @@
-# ====================================================
-# GBA Toolchain Paths (Edit these based on your OS!)
-# ====================================================
-DEVKITPRO = /opt/devkitpro
+# Duck & Dot GBA Makefile
+# Requires DevKitPro (https://devkitpro.org)
+
+# Toolchain paths (auto-detected if DevKitPro is installed properly)
 DEVKITARM = $(DEVKITPRO)/devkitARM
-
-# ====================================================
-# Compiler and Flags
-# ====================================================
 CC = $(DEVKITARM)/bin/arm-none-eabi-gcc
-CFLAGS = -Wall -Wextra -O2 -mthumb -mthumb-interwork -mlong-calls
-LDFLAGS = -specs=gba.specs
+OBJCOPY = $(DEVKITARM)/bin/arm-none-eabi-objcopy
 
-# ====================================================
-# Build Targets
-# ====================================================
+# Project name
 TARGET = duck_dot
-OBJS = duck_dot.o
 
-# ====================================================
-# Rules
-# ====================================================
+# Compiler flags
+ARCH = -mthumb -mthumb-interwork
+CFLAGS = $(ARCH) -Wall -O2 -fno-strict-aliasing -D_GBABS_
+LDFLAGS = $(ARCH) -specs=gba.specs
+
+# Source files
+SOURCES = duck_dot.c
+
 all: $(TARGET).gba
 
-# Compile .c to .o
-$(OBJS): %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(TARGET).elf: $(SOURCES)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET).elf $(LDFLAGS)
 
-# Link .o files to .elf
-$(TARGET).elf: $(OBJS)
-	$(CC) $^ $(LDFLAGS) -o $@
-
-# Convert .elf to .gba
 $(TARGET).gba: $(TARGET).elf
-	$(DEVKITARM)/bin/arm-none-eabi-objcopy -O binary $< $@
-	$(DEVKITPRO)/tools/bin/gbafix $@
+	$(OBJCOPY) -v -O binary $(TARGET).elf $(TARGET).gba
+	-@gbafix $(TARGET).gba
 
-# Clean build files
 clean:
-	rm -f $(OBJS) $(TARGET).elf $(TARGET).gba
+	@rm -fv *.elf *.gba *.o
+
+.PHONY: clean all
