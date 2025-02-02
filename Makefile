@@ -2,6 +2,7 @@
 # Requires DevKitPro (https://devkitpro.org)
 
 # Toolchain paths (auto-detected if DevKitPro is installed properly)
+DEVKITPRO = /opt/devkitpro
 DEVKITARM = $(DEVKITPRO)/devkitARM
 CC = $(DEVKITARM)/bin/arm-none-eabi-gcc
 OBJCOPY = $(DEVKITARM)/bin/arm-none-eabi-objcopy
