@@ -1,19 +1,49 @@
-# Duck & Dot 🦆 vs ●
+# Duck & Dot 🐤 vs ⬤  
 A game where ducks and dots battle for grid supremacy. Now with *recursive existential crises*.
 
 ## How to Play
-- **D-Pad**: Move cursor.
-- **A Button**: Place your symbol.
-- **Win by**:
-  - 4-in-a-row (after expansion).
-  - Creating a 2×2 square of your symbol.
-- If the grid fills, it **expands from a random corner**. The ducks/dots are taking over!
+- **D-Pad**: Move cursor.  
+- **A Button**: Place your symbol.  
+- **Win by**:  
+  - Getting **4-in-a-row** (after expansion).  
+  - Or creating a **2×2 square** of your symbol.  
+- If the grid fills, it **expands from a random corner**.  
+  The ducks/dots are taking over!
 
-## Build Instructions
-1. Install DevKitPro (because coding for GBA is still easier than adulting).
-2. Run `make`.
-3. Load `duck_dot.gba` into your favorite emulator (or a real GBA if you’re old-school).
+---
+
+## Build Instructions (GBA)
+1. Install **DevKitPro** (because coding for GBA is still easier than adulting).  
+2. Run `make`.  
+3. Load `duck_dot.gba` into your favorite emulator — or a real GBA if you’re feeling nostalgic.
+
+---
+
+## Setup Instructions (M5Stack Core2)
+1. Make sure you have **UIFlow** or **M5Stack Core2 MicroPython firmware** installed.  
+   - You can flash it easily using **M5Burner** from [M5Stack’s official site](https://m5stack.com/pages/download).  
+2. Clone this repo or copy the following files to your device:  
+   ```
+   main.py
+   res/img/
+   ```  
+   Ensure the folder structure looks like this:  
+   ```
+   /flash
+     ├── main.py
+     └── res/
+         └── img/
+             ├── duck.png
+             ├── dot.png
+             └── ...
+   ```
+3. Connect your M5Stack Core2 via USB.  
+4. Use **uPyCraft**, **Thonny**, or **VS Code + PyMakr** to upload the files.  
+5. Press the **Reset** button — the ducks and dots should start brawling on your screen!
+
+---
 
 ## Known Issues
-- Ducks occasionally unionize and demand better working conditions.
-- Grid expansion may cause mild existential dread.
+- Ducks occasionally unionize and demand better working conditions.  
+- Grid expansion may cause mild existential dread.  
+- M5Stack version might cause unexpected cuteness overload.
