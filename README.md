@@ -1,6 +1,8 @@
 # Duck & Dot 🐤 vs ⬤  
 A game where ducks and dots battle for grid supremacy. Now with *recursive existential crises*.
 
+[Take a look at demo Gameplay [Core2] 👈](https://www.youtube.com/watch?v=KBp2Sd1Cru8)
+
 ## How to Play
 - **D-Pad**: Move cursor.  
 - **A Button**: Place your symbol.  
