@@ -6,7 +6,8 @@ A game where ducks and dots battle for grid supremacy. Now with *recursive exist
 ## How to Play
 - **D-Pad**: Move cursor.  
 - **A Button**: Place your symbol.  
-- **Win by**:  
+- **Win by**:
+  - Usual tictactoe rules (when 3x3)
   - Getting **4-in-a-row** (after expansion).  
   - Or creating a **2×2 square** of your symbol.  
 - If the grid fills, it **expands from a random corner**.  
@@ -15,8 +16,8 @@ A game where ducks and dots battle for grid supremacy. Now with *recursive exist
 ---
 
 ## Build Instructions (GBA)
-1. Install **DevKitPro** (because coding for GBA is still easier than adulting).  
-2. Run `make`.  
+1. Clone the repo  
+2. Run `setup.sh`.  
 3. Load `duck_dot.gba` into your favorite emulator — or a real GBA if you’re feeling nostalgic.
 
 ---
