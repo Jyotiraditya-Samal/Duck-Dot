@@ -1,7 +1,7 @@
 # Duck & Dot 🐤 vs ⬤  
 A game where ducks and dots battle for grid supremacy. Now with *recursive existential crises*.
 
-## Take a look at demo Gameplay:
+## Gameplay Preview 🎬:
  [[Core2]](https://www.youtube.com/watch?v=KBp2Sd1Cru8)
  [[Gameboy Advance 🕹]](https://youtu.be/GVt2afJWg8k?si=pvv2dt76D094o3T2)
 ## How to Play
