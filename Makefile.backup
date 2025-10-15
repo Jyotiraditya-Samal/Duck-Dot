@@ -1,7 +1,3 @@
-LIBGBA := /opt/devkitpro/libgba
-INCLUDES := -I$(LIBGBA)/include
-LIBS := -L$(LIBGBA)/lib -lgba
-
 # Duck & Dot GBA Makefile
 # Requires DevKitPro (https://devkitpro.org)
 
@@ -25,7 +21,7 @@ SOURCES = duck_dot.c
 all: $(TARGET).gba
 
 $(TARGET).elf: $(SOURCES)
-	$(CC) $(CFLAGS) $(SOURCES) $(INCLUDES) -o $(TARGET).elf $(LDFLAGS) $(LIBS)
+	$(CC) $(CFLAGS) $(SOURCES) -o $(TARGET).elf $(LDFLAGS)
 
 $(TARGET).gba: $(TARGET).elf
 	$(OBJCOPY) -v -O binary $(TARGET).elf $(TARGET).gba
